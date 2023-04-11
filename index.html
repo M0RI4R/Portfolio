@@ -4,9 +4,163 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/501885fef0.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <h1>Portfolio</h1>
+    <header>
+      <nav>
+        <ul class="navigation">
+          <li><a href="#">HOME</a></li>
+          <li><a href="#about-me">ABOUT ME</a></li>
+          <li><a href="#projects">PROJECTS</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="introduction">
+      <div class="incroduction__left">
+        <strong>Hello I'm</strong>
+        <h1>Michał Steć</h1>
+        <p class="incroduction__left-paragraph">
+          beginer frontend developer who started adventure<br />
+          with programming six months ago and focused on <br />
+          creating websites
+        </p>
+        <div class="incroduction__left-anchors">
+          <a href="#myprojects">My projects</a>
+          <a href="#mycv">My CV</a>
+        </div>
+      </div>
+      <div class="incroduction__right">
+        <img src="images/image1.png" alt="" />
+      </div>
+    </section>
+    <section id="about-me">
+      <h2>About Me</h2>
+      <div class="about__me-conteiner">
+        <div>
+          <h3>Few words about me</h3>
+          <p class="about__me-conteiner-description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est esse
+            mollitia quo blanditiis perferendis porro numquam odio autem iste
+            ex?
+          </p>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur
+            officia temporibus quibusdam labore deserunt debitis saepe odit
+            quaerat magni. Dolores!
+          </p>
+        </div>
+        <div>
+          <h3>Skills and Technologies</h3>
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JAVASCRIPT</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul class="projects__list">
+        <li>
+          <img src="images/lottery.png" />
+          <h3>Lottery game</h3>
+          <p class="project-description">
+            Pick six numbers from 1 to 49 and check if you guess was right. You
+            can also make a bet picking 7,8,9 or 10 numbers.
+          </p>
+          <ul class="used-technology">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JAVASCRIPT</li>
+          </ul>
+
+          <div class="project-anchors">
+            <a href="">Live</a>
+            <a href="">Source</a>
+          </div>
+        </li>
+        <li>
+          <img src="images/sklep.PNG" />
+          <h3>Electronic Store</h3>
+          <p class="project-description">
+            It's simple page of shop with electronic items.
+          </p>
+          <ul class="used-technology">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JAVASCRIPT</li>
+          </ul>
+          <div class="project-anchors">
+            <a href="">Live</a>
+            <a href="">Source</a>
+          </div>
+        </li>
+        <li>
+          <img src="images/pierwsza_strona.PNG" />
+          <h3>Website</h3>
+          <p class="project-description">Simple website of It company.</p>
+          <ul class="used-technology">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JAVASCRIPT</li>
+          </ul>
+          <div class="project-anchors">
+            <a href="">Live</a>
+            <a href="">Source</a>
+          </div>
+        </li>
+        <li>
+          <img src="images/image2.png" />
+          <h3>Language school</h3>
+          <p class="project-description">
+            It's website of language school based on design made in Figma.
+          </p>
+          <ul class="used-technology">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JAVASCRIPT</li>
+          </ul>
+          <div class="project-anchors">
+            <a href="">Live</a>
+            <a href="">Source</a>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <footer>
+      <p>Thank you for your time. In case of any quastions contact me.</p>
+      <div>
+        <h3>Contact me</h3>
+        <ul>
+          <li>
+            <a href="https://facebook.com"
+              ><i class="fa-brands fa-facebook"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://github.com/M0RI4R"></a
+            ><i class="fa-brands fa-github"></i>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/michał-steć-821764118"></a
+            ><i class="fa-brands fa-linkedin"></i>
+          </li>
+        </ul>
+        <a href="mailto:michalst3c@gmail.com">michalst3c@gmail.com</a>
+      </div>
+    </footer>
   </body>
 </html>
