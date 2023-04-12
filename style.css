@@ -10,12 +10,23 @@
   list-style: none;
   color: white;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   background: radial-gradient(at top, rgb(71, 70, 70), rgb(24, 23, 24));
-  min-height: 100vh;
-  max-width: 1200px;
   margin: 0 auto;
   font-family: "Ubuntu", sans-serif;
+}
+a {
+  cursor: pointer;
+}
+section,
+footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 header {
   align-items: center;
@@ -23,20 +34,81 @@ header {
   flex-wrap: wrap;
   height: 80px;
   justify-content: flex-end;
+  position: sticky;
+  top: 0;
+  transition: all ease-out 0.5s;
+  z-index: 2;
+  padding-right: 20%;
 }
+.active {
+  background: rgb(41, 40, 41);
+  transition: all ease-out 0.5s;
+  opacity: 0.9;
+  width: 100vw;
+}
+
 .navigation {
   display: flex;
+  margin-right: auto;
 }
+
 .navigation a {
   color: var(--main-color);
   font-size: 20px;
-  padding: 10px 20px;
+  margin: 10px 20px;
   transition: 0.3s ease-in-out;
+  position: relative;
+}
+
+.navigation a::after {
+  content: "";
+  background: linear-gradient(90deg, transparent, var(--main-color));
+  position: absolute;
+  height: 1px;
+  width: 0;
+  bottom: 0px;
+  left: 0px;
+  transition: width 0.3s;
+}
+.navigation a:hover::after {
+  width: 100%;
 }
 
 .navigation a:hover {
   color: var(--second-color);
   transition: 0.3s ease-in-out;
+}
+.burger {
+  display: none;
+}
+.cv {
+  min-width: 320px;
+  position: absolute;
+  left: 50%;
+  top: 80px;
+  transform: translateX(-50%);
+  display: none;
+  z-index: 2;
+}
+.cv img {
+  width: 100%;
+}
+.show-cv {
+  display: flex;
+}
+.close-popup {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  font-size: 30px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 2;
+}
+.close-popup i {
+  color: rgb(24, 23, 24);
 }
 /* ----------------------------------------------SECTION-ONE------------------ */
 .introduction {
@@ -63,6 +135,7 @@ h1 {
 .incroduction__left-anchors {
   margin-bottom: 50px;
 }
+.contact-anchor,
 .incroduction__left-anchors > * {
   color: var(--second-color);
   border: 1px solid var(--main-color);
@@ -72,16 +145,35 @@ h1 {
 .incroduction__left-anchors a:first-child {
   margin-right: 20px;
 }
+.project-button:hover,
+.contact-anchor:hover,
 .incroduction__left-anchors a:hover {
   background: var(--main-color);
 }
+.project-button:active,
+.contact-anchor:active,
 .incroduction__left-anchors a:active {
   background: var(--second-color);
 }
 /* ------------------------------------------------ABOUT-ME-------------- */
+#about-me {
+  margin-bottom: 50px;
+}
 h2 {
+  display: inline-block;
   font-size: 32px;
   margin-bottom: 30px;
+  position: relative;
+  margin-top: 80px;
+}
+h2::after {
+  content: "";
+  background: var(--main-color);
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
 }
 h3 {
   margin-top: 10px;
@@ -89,7 +181,7 @@ h3 {
   margin-bottom: 10px;
 }
 .about__me-conteiner-description {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 .about__me-conteiner {
   display: grid;
@@ -123,14 +215,16 @@ h3 {
   flex-basis: calc((100% - 1 * 30px) / 2);
   max-width: 400px;
   padding: 20px;
+  box-shadow: 10px 15px 10px #000;
 }
+
 #projects img {
-  height: 59%;
+  aspect-ratio: 16/9;
   max-width: 100%;
   object-fit: cover;
 }
 .project-description {
-  height: 50px;
+  height: 80px;
   margin-bottom: 10px;
 }
 .used-technology {
@@ -153,8 +247,102 @@ h3 {
   padding: 5px 10px;
 }
 
+/* -------------------------------------------FOOTER----------------------------- */
+footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 40px;
+  align-items: center;
+}
+.fa-brands {
+  position: relative;
+  display: block;
+  height: 30px;
+  font-size: 24px;
+  width: 30px;
+  line-height: 30px;
+  border-radius: 50%;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.fa-brands:hover {
+  color: var(--main-color);
+  text-shadow: 0 0 15px var(--main-color);
+}
+
+.contact ul {
+  display: flex;
+  margin-bottom: 12px;
+}
+.contact ul li {
+  padding-right: 10px;
+  display: flex;
+  justify-content: center;
+}
+.mail {
+  transition: 0.5s;
+}
+.mail:hover {
+  color: var(--main-color);
+  transition: 0.5s;
+  text-shadow: 0 0 15px var(--main-color);
+}
+@media (max-width: 625px) {
+  header {
+    justify-content: center;
+    padding: 0;
+  }
+}
 @media (max-width: 570px) {
   .projects__list > li {
     flex-basis: auto;
+  }
+  .incroduction__left {
+    width: 100%;
+  }
+  .incroduction__right {
+    display: none;
+  }
+  .about__me-conteiner {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 380px) {
+  .vertical-nav {
+    flex-direction: column;
+    background: radial-gradient(at top, rgb(71, 70, 70), rgb(24, 23, 24));
+    width: 100vw;
+    height: 50vh;
+    position: absolute;
+    left: -500px;
+    top: 0;
+    transition: 0.3s ease-in-out;
+  }
+  .vertical-nav li {
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+  }
+  .vertical-nav-active {
+    transition: 0.3s ease-in-out;
+    transform: translateX(500px);
+  }
+  .burger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    font-size: 30px;
+    position: absolute;
+    margin-right: 20px;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .hide {
+    display: none;
   }
 }

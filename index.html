@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,16 +16,33 @@
       src="https://kit.fontawesome.com/501885fef0.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
+    <div class="cv">
+      <img src="images/michalCV.png" alt="curricoulum vitae" />
+      <button class="close-popup">
+        <i class="fa-regular fa-circle-xmark"></i>
+      </button>
+    </div>
+    <header class="header">
       <nav>
-        <ul class="navigation">
-          <li><a href="#">HOME</a></li>
-          <li><a href="#about-me">ABOUT ME</a></li>
-          <li><a href="#projects">PROJECTS</a></li>
+        <ul class="navigation vertical-nav">
+          <li>
+            <a class="anchor" href="#">HOME</a>
+          </li>
+          <li>
+            <a class="anchor" href="#about-me">ABOUT ME</a>
+          </li>
+          <li>
+            <a class="anchor" href="#projects">PROJECTS</a>
+          </li>
         </ul>
       </nav>
+      <button class="burger">
+        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-xmark hide"></i>
+      </button>
     </header>
     <section class="introduction">
       <div class="incroduction__left">
@@ -37,8 +54,8 @@
           creating websites
         </p>
         <div class="incroduction__left-anchors">
-          <a href="#myprojects">My projects</a>
-          <a href="#mycv">My CV</a>
+          <a href="#projects">My projects</a>
+          <a class="anchorbtn" href="#mycv">My CV</a>
         </div>
       </div>
       <div class="incroduction__right">
@@ -55,11 +72,12 @@
             mollitia quo blanditiis perferendis porro numquam odio autem iste
             ex?
           </p>
-          <p>
+          <p class="about__me-conteiner-description">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur
             officia temporibus quibusdam labore deserunt debitis saepe odit
             quaerat magni. Dolores!
           </p>
+          <a class="contact-anchor" href="#contactme">Contact me</a>
         </div>
         <div>
           <h3>Skills and Technologies</h3>
@@ -86,10 +104,15 @@
             <li>CSS</li>
             <li>JAVASCRIPT</li>
           </ul>
-
           <div class="project-anchors">
-            <a href="">Live</a>
-            <a href="">Source</a>
+            <a
+              class="project-button"
+              href="https://m0ri4r.github.io/Lottery/index.html"
+              >Live</a
+            >
+            <a class="project-button" href="https://github.com/M0RI4R/Lottery"
+              >Source</a
+            >
           </div>
         </li>
         <li>
@@ -104,26 +127,42 @@
             <li>JAVASCRIPT</li>
           </ul>
           <div class="project-anchors">
-            <a href="">Live</a>
-            <a href="">Source</a>
+            <a
+              class="project-button"
+              href="https://m0ri4r.github.io/Strona-Sklepu/"
+              >Live</a
+            >
+            <a
+              class="project-button"
+              href="https://github.com/M0RI4R/Strona-Sklepu"
+              >Source</a
+            >
           </div>
         </li>
         <li>
           <img src="images/pierwsza_strona.PNG" />
           <h3>Website</h3>
-          <p class="project-description">Simple website of It company.</p>
+          <p class="project-description">Simple website of IT company.</p>
           <ul class="used-technology">
             <li>HTML</li>
             <li>CSS</li>
             <li>JAVASCRIPT</li>
           </ul>
           <div class="project-anchors">
-            <a href="">Live</a>
-            <a href="">Source</a>
+            <a
+              class="project-button"
+              href="https://m0ri4r.github.io/Strona-internetowa-GIT/"
+              >Live</a
+            >
+            <a
+              class="project-button"
+              href="https://github.com/M0RI4R/Strona-internetowa-GIT"
+              >Source</a
+            >
           </div>
         </li>
         <li>
-          <img src="images/image2.png" />
+          <img src="images/szkola.PNG" />
           <h3>Language school</h3>
           <p class="project-description">
             It's website of language school based on design made in Figma.
@@ -134,15 +173,26 @@
             <li>JAVASCRIPT</li>
           </ul>
           <div class="project-anchors">
-            <a href="">Live</a>
-            <a href="">Source</a>
+            <a
+              class="project-button"
+              href="https://m0ri4r.github.io/StronaSzkoly/"
+              >Live</a
+            >
+            <a
+              class="project-button"
+              href="https://github.com/M0RI4R/StronaSzkoly"
+              >Source</a
+            >
           </div>
         </li>
       </ul>
     </section>
-    <footer>
-      <p>Thank you for your time. In case of any quastions contact me.</p>
-      <div>
+    <footer id="contactme">
+      <p>
+        Thank you for your time.<br />
+        In case of any quastions contact me.
+      </p>
+      <div class="contact">
         <h3>Contact me</h3>
         <ul>
           <li>
@@ -151,16 +201,21 @@
             ></a>
           </li>
           <li>
-            <a href="https://github.com/M0RI4R"></a
-            ><i class="fa-brands fa-github"></i>
+            <a href="https://github.com/M0RI4R"
+              ><i class="fa-brands fa-github"></i
+            ></a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/michał-steć-821764118"></a
-            ><i class="fa-brands fa-linkedin"></i>
+            <a href="https://www.linkedin.com/in/michał-steć-821764118"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
           </li>
         </ul>
-        <a href="mailto:michalst3c@gmail.com">michalst3c@gmail.com</a>
+        <a class="mail" href="mailto:michalst3c@gmail.com"
+          >michalst3c@gmail.com</a
+        >
       </div>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
